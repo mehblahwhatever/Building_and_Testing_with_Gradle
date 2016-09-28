@@ -1,0 +1,11 @@
+// dynamic properties were deprecated in favor of "extra properties"
+
+task copyFiles {
+	// Find files from wherever, copy them
+	// (then hardcode a list of files for illustration)
+	ext.fileManifest = [ 'data.csv', 'config.json']
+}
+
+task createArtifact(dependsOn: copyFiles) << {
+	println "FILES IN MANIFEST: ${copyFiles.fileManifest}"
+}

@@ -1,0 +1,4 @@
+task echoMyPath << {
+	println "THIS TASK'S PATH IS ${path}"
+}
+

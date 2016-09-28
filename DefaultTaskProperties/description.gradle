@@ -1,0 +1,14 @@
+task helloWorld(description: 'Says hello to the world') << {
+	print 'hello, world'
+}
+
+task altHelloWorld << {
+	println 'hello, world'
+}
+
+altHelloWorld {
+	description = 'Says hello to the world'
+}
+
+// Another way to do it
+altHelloWorld.description = 'Says hello to the world'

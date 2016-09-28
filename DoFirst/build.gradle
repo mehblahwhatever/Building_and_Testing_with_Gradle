@@ -1,0 +1,46 @@
+task setupDatabaseTests << {
+	// This is the task's existing action
+	println 'load test data'
+}
+
+setupDatabaseTests.doFirst {
+	println 'create schema'
+}
+
+task altSetupDatabaseTests << {
+	println 'load test data'
+}
+
+altSetupDatabaseTests {
+	doFirst {
+		println 'create schema'
+	}
+}
+
+task cumSetupDatabaseTests << {
+	println 'load test data'
+}
+
+cumSetupDatabaseTests.doFirst {
+	println 'create database schema'
+}
+
+cumSetupDatabaseTests.doFirst {
+	println 'drop database schema'
+}
+
+
+// Initial task definition (maybe not easily editable)
+task betterSetupDatabaseTests << {
+	println 'load test data'
+}
+
+// Our changes to the task (in a place we can edit them)
+betterSetupDatabaseTests {
+	doFirst {
+		println 'create database schema'
+	}
+	doFirst {
+		println 'drop database schema'
+	}
+}

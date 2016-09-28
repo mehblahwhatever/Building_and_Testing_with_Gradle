@@ -1,0 +1,8 @@
+apply plugin: 'java'
+
+task emailMe(dependsOn: compileJava) << {
+	// Requires at least one file successfully compiled
+	if(tasks.compileJava.didWork) {
+		println 'SEND EMAIL ANNOUNCING SUCCESS'
+	}
+}
