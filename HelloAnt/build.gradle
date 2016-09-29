@@ -1,0 +1,5 @@
+
+task hello << {
+	String greeting = "hello from Ant"
+	ant.echo(greeting)
+}

@@ -1,0 +1,14 @@
+
+task checkTheStyle << {
+	// Load the custom task
+	ant.taskdef(resource: 'checkstyletask.properties') {
+		classpath {
+			fileset(dir: 'libs/checkstyle', includes: '*.jar')
+		}
+	}
+
+	// Use the custom task
+	ant.checkstyle(config: 'src/tools/sun_checks.xml') {
+		fileset(dir: 'src')
+	}
+}
